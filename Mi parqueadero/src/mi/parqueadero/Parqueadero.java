@@ -10,108 +10,59 @@ package mi.parqueadero;
  * @author Estudiantes
  */
 public class Parqueadero {
+
+    static Vehiculo buscarVehiculo(String placa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    vehiculo miVehiculo= new Vehiculo();
     
 private Vehiculo[] Vehiculo = new Vehiculo[100];
             
-        
-   public boolean parquearVehiculo(Vehiculo Vehiculo) 
+       
+
+ public boolean ingresarVehiculo(Vehiculo vehiculo) 
  {
   for (int i = 0; i < Vehiculo.length; i++) 
   {
    if (Vehiculo[i] == null)
    {
-    Vehiculo[i] = Vehiculo;
+    Vehiculo[i] = vehiculo;
     return true;
    }
   }
   return false;
+ }
+ 
+
   
-  
-  
-  public  Vehiculo buscarVehiculo(String placa)
+ public boolean ingresarVehiculo(Vehiculo vehiculo) 
  {
-  for (int i = 0; i <  Vehiculo.length; i++) 
+  for (int i = 0; i < Vehiculo.length; i++) 
   {
-   if ( Vehiculo[i] != null)
+   if (Vehiculo[i] == null)
    {
-    if (vehiculo[i].getPlaca().equals(placa))
+    Vehiculo[i] = vehiculo;
+    return true;
+   }
+  }
+  return false;
+ }
+
+  
+ public boolean retirarVehiculo(String placa)
+ {
+  for (int i = 0; i < Vehiculo.length; i++) 
+  {
+   if (Vehiculo[i] != null)
+   {
+    if (Vehiculo[i].getPlaca().equals(placa))
     {
-     return Vehiculo[i];
+     Vehiculo[i] = null;
+     return true;
     }
    }
   }
-  return null;
- }
-
-} 
-
-
-
-public void buscarVehiculo() {
-        String placa = JOptionPane.showInputDialog("Placa del carro:");
-        Carro carro = parquea.buscarCarro(placa);
-        if (carro == null) 
-        {
-            JOptionPane.showMessageDialog(null,"No se encuentra parqueado un carro con esa placa");
-        }
-        else
-        {
-             JOptionPane.showMessageDialog(null,"Los datos del carro son:  \n" +
-                                    "Placa: "+ carro.getPlaca() + "\n"+
-                                    "Marca: "+ carro.getMarca());
-        }
+  return false;
   
  }
-  
-   
-   
-   
-            
-ic void menu() {
-        
-        int opcion=-1;
-        do {
-            // Menú con las opciones disponibles
-            String valorSeleccionado = 
-            JOptionPane.showInputDialog(" ---- MENU PARQUEADERO ---  \n" +
-                        "1.Parquear un carro    \n" +
-                        "2.Buscar un carro  \n" +
-                        "3.Sacar un carro   \n" +
-                        "0.Terminar     \n\n" +
-                        "Opción seleccionada: ");
-            try 
-            {
-                opcion = Integer.parseInt(valorSeleccionado);
-                switch (opcion){
-                    // Opcion 1: Parquear un carro
-                    case 1: parquearVehiculo();
-                            break;
-                    
-                    // Opcion 2: Buscar un carro y mostrar sus datos 
-                    case 2: buscarVehiculo();
-                            break;
-                    
-                    // Opcion 3: Sacar un carro del parqueadero
-                    case 3: sacarVehiculo();
-                            break;
-    
-                    case 0: break;
-                    
-                    default: JOptionPane.showMessageDialog(null,"Opción no disponible");    
-                }
-            }
-            catch (NumberFormatException errorIngreso)
-            {
-                JOptionPane.showMessageDialog(null,"Dato ingresado incorrecto. Debe ser numérico");   
-            }
-        }
-        while (opcion != 0);
-        JOptionPane.showMessageDialog(null," - Terminación exitosa -");
-
-    }
-
-}  //Fin de la clase ControlParqueadero
-
-
+}

@@ -15,14 +15,6 @@ public interface Ivehiculo {
    private String propietario;
    private float cilindraje;
     
-    
-    
-   public Vehiculo(String placa, String propietario, float cilindraje){ 
-    
-        this.placa = placa;
-        this.propietario = propietario;
-        this.cilindraje  = cilindraje ;
-    }
-
+ 
  
 }

@@ -5,6 +5,8 @@
  */
 package mi.parqueadero;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
@@ -25,12 +27,15 @@ public class MiParqueadero {
          
         float cilindraje;
         System.out.println("");
+        
+        
+        
 
         
       public void buscarVehiculo() {
         String placa = JOptionPane.showInputDialog("Placa del carro:");
-        Vehiculo Vehiculo = parquea.buscarVehiculo(placa);
-        if (carro == null) 
+        Vehiculo Vehiculo = Parqueadero.buscarVehiculo(placa);
+        if (Vehiculo == null) 
         {
             JOptionPane.showMessageDialog(null,"No se encuentra parqueado un carro con esa placa");
         }
