@@ -27,13 +27,22 @@ public class MiParqueadero {
         System.out.println("");
 
         
-      
-        
-        
-        
-      
-        
-   
+      public void buscarVehiculo() {
+        String placa = JOptionPane.showInputDialog("Placa del carro:");
+        Vehiculo Vehiculo = parquea.buscarVehiculo(placa);
+        if (carro == null) 
+        {
+            JOptionPane.showMessageDialog(null,"No se encuentra parqueado un carro con esa placa");
+        }
+        else
+        {
+             JOptionPane.showMessageDialog(null,"Los datos del carro son:  \n" +
+                                    "Placa: "+ Vehiculo.getPlaca() + "\n"+
+                                    "Marca: "+ Vehiculo.getMarca());
+        }
+
+ 
+
         
         
             

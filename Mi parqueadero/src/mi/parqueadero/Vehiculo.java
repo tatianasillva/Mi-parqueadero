@@ -11,25 +11,36 @@ package mi.parqueadero;
  */
 public class Vehiculo implements Ivehiculo {
 
-    @Override
-    private String placa() {
-        
-        
-        
-    }
-        
+   
 
-    @Override
-    private String propietario() {
-        
-        
+    
+    private String placa;
+    private String marca;
+    private float cilindraje;
+    
+     public Vehiculo(String placa, String marca, float cilindraje) 
+    {
+        this.placa = placa;
+        this.marca = marca;
+        this.cilindraje = cilindraje;
+    }
+     
+    public String getPlaca() 
+    {
+        return placa;
+    }
+    /**
+     * Método para consultar la marca
+     * @return  la marca del carro
+     */
+    public String getMarca() 
+    {
+        return marca;
     }
 
-    @Override
-    private float cilindraje() {
-        
-        
+    
+       public float getCilindraje() 
+    {
+        return cilindraje;
     }
-    
-    
-}
+
