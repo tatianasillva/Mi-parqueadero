@@ -9,14 +9,13 @@ package mi.parqueadero;
  *
  * @author Estudiantes
  */
-public interface Ivehiculo {
+public class Parqueadero {
+    
+    vehiculo miVehiculo= new Vehiculo();
+    
+    miVehiculo=Vehiculo[100]
+            
+        
    
-   private String placa();
-   private String propietario();
-   private float cilindraje ();
-    
-    
-    
-   
- 
-  }
+            
+}
